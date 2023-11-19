@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<!--
+HTML: 
+A fent említett feladathoz hozzon létre egy ürlapot amin fel tudja venni a 
+torták adatait egy gomb lenyomására valamint egy másik gomb lenyomására 
+jelenítse meg a tortákat egy táblázatban. (Bootstrap használata kell!)
+-->
+
+<body>
+    <div class="container-fluid">
+        <form>
+            <fieldset>
+                <legend>Kalóriakalkulátor a tudatos emeletestorta-fogyasztáshoz</legend>
+                <div class="mb-3">
+                    <label for="tortaNeve" class="form-label">Torta neve</label>
+                    <input type="textInput" id="tortaNeve" class="form-control" placeholder="Torta neve">
+                </div>
+                <div class="mb-3">
+                    <label for="emeletekSzama" class="form-label">Emeletek száma</label>
+                    <select id="emeletekSzama" class="form-control">
+                        <option value="0" selected>Egyszintes</option>
+                        <option value="1">Kétszintes</option>
+                        <option value="2">Háromszintes</option>
+                        <option value="3">Négyszintes</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="megkenve">
+                        <label class="form-check-label" for="megkenve">
+                            Krémmel megkenve
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="hozzaAd();">Torta hozzáadása</button>
+                <button type="button" class="btn btn-primary" onclick="megJelenit();">Torták megjelenítése</button>
+            </fieldset>
+            <table class="table table-striped" id="tablazat" style="display:none">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Torta</th>
+                        <th scope="col">Emeletek</th>
+                        <th scope="col">Megkenve</th>
+                        <th scope="col">Kalória</th>
+                    </tr>
+                </thead>
+                <tbody id="tablazatAdatok">
+                </tbody>
+
+            </table>
+        </form>
+    </div>
+    <script src="js/main.js" defer></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
